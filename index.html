@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            background: #171717;
+            color: #f2f2f2;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 24px;
+            border-radius: 10px;
+            border: none;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <audio src="pm.mp3" id="son"></audio>
+    <button id="btn">
+        Pyramide maudite
+    </button>
+    <p id="resultat">Crie : </p>
+</body>
+<script>
+let compteur = 0;
+const audio = new Audio("pm.mp3");
+
+document.getElementById("btn").addEventListener("click", () => {
+    compteur++;
+    document.getElementById("resultat").innerHTML = "Crie : " + compteur;
+    audio.currentTime = 0;
+    audio.play();
+});
+
+</script>
+</html>
