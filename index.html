@@ -45,17 +45,30 @@
     <p id="resultat">Crie : </p>
 </body>
 <script>
-let compteur = 0;
+
+let compteur = Number(localStorage.getItem("compteur")) || 0;
+
 const audio = new Audio("pm.mp3");
+
+document.getElementById("resultat").innerHTML = "Crie : " + compteur;
 
 document.getElementById("btn").addEventListener("click", () => {
     compteur++;
+
+    // Affichage
     document.getElementById("resultat").innerHTML = "Crie : " + compteur;
+
+    // Sauvegarde dans le localStorage
+    localStorage.setItem("compteur", compteur);
+
+    // Audio
     audio.currentTime = 0;
     audio.play();
 });
 
+
 </script>
 
 </html>
+
 
